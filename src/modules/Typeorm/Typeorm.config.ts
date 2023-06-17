@@ -14,7 +14,7 @@ export const getTypeOrmConfig = (
   extra: {
     charset: 'utf8mb4_unicode_ci',
   },
-  entities: [], // add your entities here
+  entities: [__dirname + '/../**/*.entity{.ts,.js}'], // add your entities here
   synchronize: Boolean(
     parseInt(configService.get<string>(ENVKEYS.MYSQL_DATABASE)),
   ), // set to false in production
