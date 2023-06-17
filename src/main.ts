@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './modules/app/app.module';
-import { ConfigService } from './modules/config/config.service';
+import { AppModule } from './modules/App/App.module';
+import { ConfigService } from './modules/Config/Config.service';
 import { Logger } from '@nestjs/common';
-import { ENVKEYS } from './modules/config/config.constants';
+import { ENVKEYS } from './modules/Config/Config.constants';
 declare const module: any;
 
 async function bootstrap() {
