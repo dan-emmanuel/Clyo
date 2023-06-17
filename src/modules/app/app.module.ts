@@ -9,6 +9,8 @@ import { ConfigModule } from 'modules/Config/Config.module';
 import { RouterModule } from 'nest-router';
 import { Router } from 'modules/Config/Router';
 
+const typeormSync = false;
+
 @Module({
   imports: [
     ConfigModule.forRoot(),

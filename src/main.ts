@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './modules/App/App.module';
-import { ConfigService } from './modules/Config/Config.service';
+import { AppModule } from 'modules/App/App.module';
+import { ConfigService } from 'modules/Config/Config.service';
 import { Logger } from '@nestjs/common';
-import { ENVKEYS } from './modules/Config/Config.constants';
+import { ENVKEYS } from 'modules/Config/Constants';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 declare const module: any;
 
