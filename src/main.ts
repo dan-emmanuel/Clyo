@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from 'src/modules/App/App.module';
-import { ConfigService } from 'src/modules/Config/Config.service';
+import { ConfigService } from '@nestjs/config';
 import { Logger } from '@nestjs/common';
 import { ENVKEYS } from 'src/modules/Config/Constants';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -20,9 +20,5 @@ async function bootstrap() {
 
   await app.listen(configService.get(ENVKEYS.APPPORT));
   Logger.log(`Application is running on: ${await app.getUrl()}`);
-  if (module.hot) {
-    module.hot.accept();
-    module.hot.dispose(() => app.close());
-  }
 }
 bootstrap();
