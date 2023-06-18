@@ -1,6 +1,6 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
-import { ENVKEYS } from 'modules/Config/Constants';
+import { ENVKEYS } from 'src/modules/Config/Constants';
 
 export const getTypeOrmConfig = (
   configService: ConfigService,
