@@ -3,17 +3,20 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { TransactionItem } from './TransactionHeader.entity';
+// import { Transaction } from 'src/modules/Transactions/entities/Transaction.entity';
 
 @Entity()
-export class Transaction {
+export class TransactionItem {
   @PrimaryGeneratedColumn()
   @ApiProperty()
   id: number;
+
+  @Column({ type: 'int' })
+  @ApiProperty()
+  transactionId: number;
 
   @Column({ type: 'decimal' })
   @ApiProperty()
@@ -34,10 +37,4 @@ export class Transaction {
   @UpdateDateColumn()
   @ApiProperty()
   updatedAt: Date;
-
-  @OneToMany(
-    () => TransactionItem,
-    (transactionItem) => transactionItem.transactionId,
-  )
-  transactionItems: TransactionItem[];
 }
